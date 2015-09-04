@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <ModulePrefs title="Subscribe to page / site changes for viewers" height="50" width="250" />
+  <UserPref name="formkey" display_name="Form key" datatype="string" required="true" default_value="eg: dFkzTlRNaHBZLWhxSlQ5V3pkVIMFE6MQ"/>
+  <UserPref name="button" display_name="Button (img url)" datatype="string" required="true" default_value="https://sites.google.com/site/subscribetochangesforviewers/home/bouton_subscribe.gif"/>
+  <UserPref name="confirmation" display_name="Confirmation" datatype="string" required="true" default_value="Thank you. You have successfully subscribed to page / site changes."/>
+  <Content preferred_width="250"></Content>
+  <Content preferred_height="50"></Content>
+  <Content type="html"><![CDATA[
+<html><body style="background-color:transparent;">
+<script type="text/javascript">
+
+var submitted=false;
+var prefs = new gadgets.Prefs();
+
+function init(){
+  document.getElementById("gadget").innerHTML = "<img src=\""+prefs.getString("button")+"\" onClick=\"showForm();\"/>";
+}
+
+function showThanks(){
+  document.getElementById("gadget").innerHTML = "<span style=\"font-size: 12px;\">"+prefs.getString("confirmation")+"</span>";
+}
+
+function showForm(){
+
+  var form = "<iframe name=\"hidden_iframe\" id=\"hidden_iframe\" style=\"display:none;\" onload=\"if(submitted){showThanks();}\"></iframe>";
+  form += "<form action=\"https://spreadsheets.google.com/formResponse?hl=en&amp;formkey="+prefs.getString("formkey")+"&amp;ifq\" method=\"post\" target=\"hidden_iframe\" onsubmit=\"submitted=true;\">";
+  form += "<input type=\"text\" name=\"entry.0.single\" value=\"Please enter your email\" id=\"entry_0\">";
+  form += "<input type=\"submit\" name=\"submit\" value=\"OK\"><br>";
+  form += "<input type=\"checkbox\" value=\"Yes\" name=\"unsubscribe\"> Check to unsubscribe</form>";
+  document.getElementById("gadget").innerHTML = form;
+      document.getElementById("status").innerHTML="https://spreadsheets.google.com/formResponse?hl=en&amp;formkey="+prefs.getString("formkey")+"&amp;ifq\"
+}
+
+gadgets.util.registerOnLoadHandler(init);
+
+</script>
+  <span id="gadget"></span>
+<span id="status" style="border:1px solid black;"></span>
+</body></html>
+     ]]>
+  </Content> 
+</Module>
