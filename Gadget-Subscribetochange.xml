@@ -27,7 +27,7 @@ function showForm(){
   form += "<form action=\"https://spreadsheets.google.com/formResponse?hl=en&amp;formkey="+prefs.getString("formkey")+"&amp;ifq\" method=\"post\" target=\"hidden_iframe\" onsubmit=\"submitted=true;\">";
   form += "<input type=\"text\" name=\"entry.0.single\" value=\"Please enter your email\" id=\"entry_0\">";
   form += "<input type=\"submit\" name=\"submit\" value=\"OK\"><br>";
-  form += "<input type=\"checkbox\" value=\"Yes\" name=\"unsubscribe\"> Check to unsubscribe</form>";
+  form += "<input type=\"checkbox\" value=\"Yes\" name=\"entry.1.single\"> Check to unsubscribe</form>";
   document.getElementById("gadget").innerHTML = form;
 
 }
