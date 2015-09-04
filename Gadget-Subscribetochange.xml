@@ -24,7 +24,8 @@ function showThanks(){
 function showForm(){
 
   var form = "<iframe name=\"hidden_iframe\" id=\"hidden_iframe\" style=\"display:none;\" onload=\"if(submitted){showThanks();}\"></iframe>";
-  form += "<form action=\"https://spreadsheets.google.com/formResponse?hl=en&amp;formkey="+prefs.getString("formkey")+"&amp;ifq\" method=\"post\" target=\"hidden_iframe\" onsubmit=\"submitted=true;\">";
+  
+  form += "<form action=\"https://docs.google.com/forms/d/"+prefs.getString("formkey")+"/formResponse\" method=\"post\" target=\"hidden_iframe\" onsubmit=\"submitted=true;\">";
   form += "<input type=\"text\" name=\"entry.0.single\" value=\"Please enter your email\" id=\"entry_0\">";
   form += "<input type=\"submit\" name=\"submit\" value=\"OK\"><br>";
   form += "<input type=\"checkbox\" value=\"Yes\" name=\"entry.1.single\"> Check to unsubscribe</form>";
