@@ -29,15 +29,15 @@ function showForm(){
   form += "<input type=\"submit\" name=\"submit\" value=\"OK\"><br>";
   form += "<input type=\"checkbox\" value=\"Yes\" name=\"unsubscribe\"> Check to unsubscribe</form>";
   document.getElementById("gadget").innerHTML = form;
-      document.getElementById("status").innerHTML="https://spreadsheets.google.com/formResponse?hl=en&amp;formkey="+prefs.getString("formkey")+"&amp;ifq\"
-      document.getElementById("status").innerHTML="hi";
+document.getElementById("status").innerHTML="https://spreadsheets.google.com/formResponse?hl=en&amp;formkey="+prefs.getString("formkey")+"&amp;ifq\";
+document.getElementById("status").innerHTML="hi";
 }
 
 gadgets.util.registerOnLoadHandler(init);
 
 </script>
   <span id="gadget"></span>
-<span id="status" style="border:1px solid black;"></span>
+<span id="status" style="border:1px solid black;">status</span>
 </body></html>
      ]]>
   </Content> 
