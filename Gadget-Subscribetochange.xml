@@ -2,7 +2,7 @@
 <Module>
   <ModulePrefs title="Subscribe to page / site changes for viewers" height="50" width="250" />
   <UserPref name="formkey" display_name="Form key" datatype="string" required="true" default_value="eg: dFkzTlRNaHBZLWhxSlQ5V3pkVIMFE6MQ"/>
-  <UserPref name="button" display_name="Button (img url)" datatype="string" required="true" default_value="https://sites.google.com/site/subscribetochangesforviewers/home/bouton_subscribe.gif"/>
+  <!--with src=\""+prefs.getString("button")+"\" in init() : <UserPref name="button" display_name="Button (img url)" datatype="string" required="true" default_value="https://sites.google.com/site/subscribetochangesforviewers/home/bouton_subscribe.gif"/>-->
   <UserPref name="confirmation" display_name="Confirmation" datatype="string" required="true" default_value="Thank you. You have successfully subscribed to page / site changes."/>
   <Content preferred_width="250"></Content>
   <Content preferred_height="50"></Content>
@@ -14,7 +14,7 @@ var submitted=false;
 var prefs = new gadgets.Prefs();
 
 function init(){
-  document.getElementById("gadget").innerHTML = "<img src=\""+prefs.getString("button")+"\" onClick=\"showForm();\"/>";
+  document.getElementById("gadget").innerHTML = "<button onClick=\"showForm();\"/>Subscribe</button>";
 }
 
 function showThanks(){
@@ -37,7 +37,6 @@ gadgets.util.registerOnLoadHandler(init);
 
 </script>
   <span id="gadget"></span>
-<span id="status" style="border:1px solid black;">status</span>
 </body></html>
      ]]>
   </Content> 
