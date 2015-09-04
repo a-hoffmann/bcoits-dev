@@ -26,9 +26,9 @@ function showForm(){
   var form = "<iframe name=\"hidden_iframe\" id=\"hidden_iframe\" style=\"display:none;\" onload=\"if(submitted){showThanks();}\"></iframe>";
   
   form += "<form action=\"https://docs.google.com/forms/d/"+prefs.getString("formkey")+"/formResponse\" method=\"post\" target=\"hidden_iframe\" onsubmit=\"submitted=true;\">";
-  form += "<input type=\"text\" name=\"entry.0.single\" value=\"Please enter your email\" id=\"entry_0\">";
+  form += "<input type=\"text\" name=\"entry.901124617\" value=\"Please enter your email\" id=\"entry_9011254617\">";
   form += "<input type=\"submit\" name=\"submit\" value=\"OK\"><br>";
-  form += "<input type=\"checkbox\" value=\"Yes\" name=\"entry.1.single\"> Check to unsubscribe</form>";
+  form += "<input type=\"checkbox\" value=\"Yes\" name=\"entry.1190206551\" id=\"entry_1190206551\"> Check to unsubscribe</form>";
   document.getElementById("gadget").innerHTML = form;
 
 }
