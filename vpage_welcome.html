@@ -1,0 +1,58 @@
+﻿<html>
+<head>Welcome</head>
+<body>
+
+<div id="bienvenue-border">
+  <img src="GIV_LM.png"/>
+<span style="font-size:4em; position:absolute; top: 1em;">Bienvenue <span id="personname">undefined</span></span>
+</div>
+
+
+</body>
+
+<style>
+body {
+background:black;
+}
+img {
+padding:30px;
+}
+#bienvenue-border {
+border:1px solid white;
+background:grey;
+font-family: Georgia;
+color:white;
+}
+
+#bienvenue-border * {
+display:inline-block;
+}
+</style>
+
+</html>
+
+<!--
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<div id="time"></div>
+<script>
+$.ajax({
+    url: 'http://rtpi.data.tpg.ch/v1/GetNextDepartures?key=cedbbe00-9638-11e4-95c6-0002a5d5c51b&stopCode=PFUM',
+    type: 'GET',
+    dataType: 'xml',
+    timeout: 1000,
+    error: function(){
+        alert('Error loading XML document');
+    },
+    success: function(xml){
+        xmlDoc = $.parseXML(xml);
+	$xml=$(xmlDoc);
+	$info=$xml.find("waitingTime");
+	$("#time").append($info.text());
+    }
+});-->
+
+
+
+
+
+</script>
